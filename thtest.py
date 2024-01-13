@@ -1,23 +1,11 @@
-import asyncio
 import threading
 import time
 
-async def funct(car):
-    print("Начало выполнения функции" + car)
-    await asyncio.sleep(2)
-    print("Функция завершилась")
-
-async def main():
-    await asyncio.gather(
-        funct(car='impala'),
-    )
-asyncio.run(main())
-
-
+start = time.time()
 
 def func(car):
     print("Начало нашей ф-и..." + car)
-    time.sleep(3)
+    time.sleep(5)
     print("...конец ф-и")
 
 
@@ -35,4 +23,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-
+end = time.time() - start
+print(end)
